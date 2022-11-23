@@ -1,6 +1,6 @@
 import { NextPage } from 'next'
-import { Flex, Box, Image, Heading, Text, Center } from '@chakra-ui/react'
-
+import { Flex, Box, Image, Heading, Text } from '@chakra-ui/react'
+import { SearchIcon } from '@chakra-ui/icons'
 const ProductPage: NextPage = () => {
   return (
     <Box>
@@ -23,6 +23,9 @@ const ProductPage: NextPage = () => {
             What do you feed today?
           </Text>
         </Flex>
+        <Box ms="auto">
+          <SearchIcon />
+        </Box>
       </Flex>
       <h1>This is product page</h1>
     </Box>

@@ -1,17 +1,22 @@
-const initialState: any = {
-  loading: false,
+import { createSlice } from '@reduxjs/toolkit'
+
+export interface ProductState {
+  list: any[]
 }
 
-export default function ProductReducer(state = initialState, action: any) {
-  const { loading } = action
-  switch (action.type) {
-    case 'LOADING': {
-      return {
-        ...state,
-        loading,
-      }
-    }
-    default:
-      return state
-  }
+const initialState: ProductState = {
+  list: [],
 }
+
+export const productSlice = createSlice({
+  name: 'product',
+  initialState,
+  reducers: {
+    getList: (state: ProductState) => {
+      state.list
+    },
+  },
+})
+
+export const { getList } = productSlice.actions
+export default productSlice.reducer
